@@ -31,9 +31,9 @@
     <%= form.text_field :location %>
   </div>
 
-  <div>
-    <%= form.label :user_id, style: "display: block" %>
-    <%= form.number_field :user_id, value: current_user.id %>
+  <div class="d-none">
+    <%= form.label :user_id, style: "display: block"%>
+    <%= form.number_field :user_id, id: :parties_user_id, value: current_user.id %>
   </div>
 
   <div>
