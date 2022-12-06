@@ -1,17 +1,3 @@
-<p style="color: green"><%= notice %></p>
-
-<h1>Members</h1>
-
-<div id="members">
-  <% @members.each do |member| %>
-    <%= render member %>
-    <p>
-      <%= link_to "Show this member", member %>
-    </p>
-  <% end %>
-</div>
-
-
 <div class="main_welcome">
   <h1>Make new friends this christmas</h1>
   <div class="snowflakes" aria-hidden="true">
@@ -49,5 +35,3 @@
 
 
 </div>
-
-<%= link_to "New member", new_member_path %>
