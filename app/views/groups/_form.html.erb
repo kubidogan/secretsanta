@@ -24,27 +24,4 @@
   <div>
     <%= form.submit %>
   </div>
-
-  <p>Add Names</p>
-
-  <div>
-    <ul>
-      <%= form.fields_for :users do |users_form| %>
-        <li>
-          <%= users_form.label :name %>
-          <%= users_form.text_field :name %>
-
-          <%= users_form.label :email %>
-          <%= users_form.text_field :email %>
-
-          <%= users_form.label :name %>
-          <%= users_form.text_field :name %>
-
-          <%= users_form.label :email %>
-          <%= users_form.text_field :email %>
-          ...
-        </li>
-      <% end %>
-    </ul>
-  </div>
 <% end %>

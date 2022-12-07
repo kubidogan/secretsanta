@@ -1,10 +1,19 @@
-<h1>Editing group</h1>
+<h1>Edit Gift</h1>
 
-<%= render "form", group: @group %>
+<%= link_to "go back to the gift", @gift %>
 
-<br>
+<%= form_for @gift, url: gift_path, method: :patch do |f| %>
+ <%= f.label :name %>
+ <%= f.text_field :name %><br>
+ <%= f.label "price in £:" %>
+ <%= f.text_field :price %><br>
+ <%= f.label :description %>
+ <%= f.text_field :description %><br>
+ <%= f.submit %>
+<% end %>
 
-<div>
-  <%= link_to "Show this group", @group %> |
-  <%= link_to "Back to groups", groups_path %>
-</div>
+<%= form_tag gift_path(@gift), method: "delete" do  %>
+  <%= submit_tag "Delete Gift" %>
+<% end %>
+
+<%= link_to "Go back to home page", groups_path %>

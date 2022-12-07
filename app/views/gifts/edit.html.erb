@@ -1,6 +1,6 @@
 
 <h1>Edit Gift</h1>
-
+<%= render @gift %>
 <%= link_to "go back to the gift", @gift %>
 
 <%= form_for @gift, url: gift_path, method: :patch do |f| %>

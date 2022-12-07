@@ -79,6 +79,7 @@ class GiftsController < ApplicationController
   end
 
   def show
+    @gifts = Gift.all
     @wishlist = current_user.wishlist
   end
 

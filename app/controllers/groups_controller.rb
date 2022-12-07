@@ -70,6 +70,7 @@
 # end
 
 class GroupsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_group, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -78,14 +79,12 @@ class GroupsController < ApplicationController
 
   def new
     @group = Group.new
-    @group.users << User.new
-    # 7.times { @group.users.build}
+    # @group.users << User.new
   end
 
   def create
-    # raise params.inspect
-    @group = Group.new(group_params)
-    # @user.groups.build(name: params[:group][:name], budget: params[:group][:budget])
+    @group = Group.new(name: params[:group][:name], budget: params[:group][:budget])
+    # @group = Group.new(group_params)
 
     if @group.valid?
       @group.save
@@ -99,6 +98,7 @@ class GroupsController < ApplicationController
   end
 
   def add_user
+    @user = User.create
   end
 
   def create_user
@@ -152,6 +152,7 @@ class GroupsController < ApplicationController
   end
 
   def edit
+    @gift = Gift.new
   end
 
   def update

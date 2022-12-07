@@ -23,3 +23,9 @@
 <% else %>
   <p>There is no description.</p>
 <% end %>
+
+<%= link_to "Edit Gift", edit_gift_path(@gift) %>
+
+<%= link_to "Go back", gifts_path %>
+
+<%= button_to "Remove this gift", @gift, method: :delete %>
