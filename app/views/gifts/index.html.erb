@@ -1,14 +1,14 @@
 <p style="color: green"><%= notice %></p>
+<h1><%= @user.email %>'s Wishlist</h1>
 
-<h1>Gifts</h1>
+<%= link_to "New wish", new_gift_path %>
 
-<div id="gifts">
+<ul>
   <% @gifts.each do |gift| %>
-    <%= render gift %>
-    <p>
-      <%= link_to "Show this gift", gift %>
-    </p>
+    <li><%= link_to gift.name, gift %></li>
+    <%= link_to "Edit Gift", edit_gift_path(gift) %>
+    <%= form_tag gift_path(gift), method: "delete" do  %>
+      <%= submit_tag "Delete Gift" %>
+    <% end %>
   <% end %>
-</div>
-
-<%= link_to "New gift", new_gift_path %>
+</ul>

@@ -1,10 +1,20 @@
-<h1>Editing gift</h1>
 
-<%= render "form", gift: @gift %>
+<h1>Edit Gift</h1>
 
-<br>
+<%= link_to "go back to the gift", @gift %>
 
-<div>
-  <%= link_to "Show this gift", @gift %> |
-  <%= link_to "Back to gifts", gifts_path %>
-</div>
+<%= form_for @gift, url: gift_path, method: :patch do |f| %>
+ <%= f.label :name %>
+ <%= f.text_field :name %><br>
+ <%= f.label "price in £:" %>
+ <%= f.text_field :price %><br>
+ <%= f.label :description %>
+ <%= f.text_field :description %><br>
+ <%= f.submit %>
+<% end %>
+
+<%= form_tag gift_path(@gift), method: "delete" do  %>
+  <%= submit_tag "Delete Gift" %>
+<% end %>
+
+<%= link_to "Go back to home page", gifts_path %>

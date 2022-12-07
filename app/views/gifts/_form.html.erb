@@ -30,3 +30,14 @@
     <%= form.submit %>
   </div>
 <% end %>
+
+<%= form_for @gift, url: gifts_path, method: :post do |f| %>
+ <%= f.label :name %>
+ <%= f.text_field :name %><br>
+ <%= f.label "price in £:" %>
+ <%= f.text_field :price %><br>
+ <%= f.label :description %>
+ <%= f.text_field :description %><br>
+ <%= f.submit %>
+<% end %>
+<%= link_to "Go back to home page", gifts_path %>
