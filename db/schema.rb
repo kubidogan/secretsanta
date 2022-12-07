@@ -10,29 +10,40 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_06_002823) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_07_003714) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "members", force: :cascade do |t|
-    t.string "name"
-    t.string "email"
-    t.integer "parties_id"
+  create_table "draws", force: :cascade do |t|
+    t.integer "group_id"
+    t.integer "giver_id"
+    t.integer "receiver_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["parties_id"], name: "index_members_on_parties_id"
   end
 
-  create_table "parties", force: :cascade do |t|
-    t.string "title"
-    t.text "description"
-    t.datetime "event_date"
-    t.string "location"
-    t.integer "user_id"
+  create_table "gifts", force: :cascade do |t|
+    t.string "name"
+    t.integer "price"
+    t.string "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "people"
-    t.index ["user_id"], name: "index_parties_on_user_id"
+    t.integer "wishlist_id"
+  end
+
+  create_table "groups", force: :cascade do |t|
+    t.string "name"
+    t.integer "budget"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "invitations", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "group_id"
+    t.boolean "accepted"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -45,6 +56,12 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_06_002823) do
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
+  create_table "wishlists", force: :cascade do |t|
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :gifts
+  resources :invitations
+  resources :groups
 
 
   resources :members
