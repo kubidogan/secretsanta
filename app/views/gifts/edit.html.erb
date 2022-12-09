@@ -1,7 +1,7 @@
 
 <h1>Edit Gift</h1>
 <%= render @gift %>
-<%= link_to "go back to the gift", @gift %>
+<%= link_to "Go back to the Gift", @gift %>
 
 <%= form_for @gift, url: gift_path, method: :patch do |f| %>
  <%= f.label :name %>
@@ -17,4 +17,4 @@
   <%= submit_tag "Delete Gift" %>
 <% end %>
 
-<%= link_to "Go back to home page", gifts_path %>
+<%= link_to "Go back to home page", show_path %>

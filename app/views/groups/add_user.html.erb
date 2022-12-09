@@ -1,7 +1,7 @@
-<div class="add_friends_form">
+<div id="add_friends_form">
   <h1>Hi <%= current_user.name.capitalize %>! </h1>
 
-  <div class="text-area">
+  <div id="text-area">
 
     <h3>Add friends to your group!</h3>
 
@@ -9,20 +9,20 @@
 
     <p><%= form_for @user, url: add_user_path, method: :post do |f| %></p>
     <div>
-      <p><%= f.label "Name:", :class => "friend_label" %></p>
+      <p><%= f.label "Name:", id: "friend_label" %></p>
       <p><%= f.text_field :name %></p>
     </div>
     <div>
-      <p><%= f.label "Their email:", :class => "friend_label" %></p>
+      <p><%= f.label "Their email:", id: "friend_label" %></p>
       <p><%= f.text_field :email %></p>
     </div>
-    <p><%= f.submit "Add friend", :class => "add_friend_button" %></p>
+    <p><%= f.submit "Add friend", id: "add_friend_button" %></p>
     <% end %>
 
   </div>
 
   <div>
-    <%= button_to "Back to homepage", group_path, method: :get, :class => "home_page_button" %>
+    <%= button_to "Back to homepage", show_path, method: :get, id: "home_page_button" %>
   </div>
 
 </div>

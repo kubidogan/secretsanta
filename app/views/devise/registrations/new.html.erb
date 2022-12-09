@@ -1,34 +1,30 @@
 <h2>Sign up for your Secret Santa</h2>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+
+<div class="signup_form">
+  <h2>Join Kubis Secret Santa</h2>
+  <p><%= render "errors/errors" %></p>
+  <div class="text-area">
+    <p><%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %></p>
+     <%= render "devise/shared/error_messages", resource: resource %>
+    <div>
+      <p><%= f.label "Choose username:", :class => "signup_label" %></p>
+      <p><%= f.text_field :name %></p>
+    </div>
+    <div>
+      <p><%= f.label "Choose Email:", :class => "signup_label" %></p>
+      <p><%= f.text_field :email %></p>
+    </div>
+    <div>
+      <p><%= f.label "Password:", :class => "signup_label" %></p>
+      <p><%= f.password_field :password %></p>
+    </div>
+    <div>
+      <p><%= f.label "Password confirmation:", :class => "signup_label" %></p>
+      <p><%= f.password_field :password_confirmation %></p>
+    </div>
+    <p><%= f.submit "Submit", :class => 'button', :class => "signup_button" %></p>
+    <% end %>
   </div>
-
-  <div>
-     <%= f.label :name %><br />
-     <%= f.text_field :name, autofocus: true %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up", class: "btn btn-success mt-2" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+  <h4>Already Registered? <%= link_to "Login Here", new_user_session_path %> </h4>

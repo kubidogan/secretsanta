@@ -1,14 +1,20 @@
-<p style="color: green"><%= notice %></p>
-<h1><%= @user.email %>'s Wishlist</h1>
+<div class="container" id="giftindex">
+  <h1><%= @user.name.capitalize %>'s Wishlist</h1>
+  <%= link_to "New wish", new_gift_path %>
 
-<%= link_to "New wish", new_gift_path %>
-
-<ul>
-  <% @gifts.each do |gift| %>
-    <li><%= link_to gift.name, gift %></li>
-    <%= link_to "Edit Gift", edit_gift_path(gift) %>
-    <%= form_tag gift_path(gift), method: "delete" do  %>
-      <%= submit_tag "Delete Gift" %>
+  <div class="card gift_index" style="width: 18rem;">
+    <% @gifts.each do |gift| %>
+      <div class="card-header">
+        <%= link_to gift.name.capitalize, gift %>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item"><%= link_to "Edit Gift", edit_gift_path(gift) %></li>
+        <li class="list-group-item">
+        <%= form_tag gift_path(gift), method: "delete" do  %>
+          <%= submit_tag "Delete Gift" %>
+        <% end %>
+        </li>
+      </ul>
     <% end %>
-  <% end %>
-</ul>
+  </div>
+</div>

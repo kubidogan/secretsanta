@@ -1,24 +1,25 @@
-
-<div class="create_gift_form">
-  <h2>Add a new gift</h2>
-  <div class="text-area">
-    <p><%= form_for @gift, url: gifts_path, method: :post do |f| %></p>
-    <div>
-      <p><%= f.label "Name:", :class => "create_gift_label" %></p>
-      <p><%= f.text_field :name %></p>
+<div class="container">
+  <div id="create_gift_form">
+    <h2>Add a new gift</h2>
+    <div id="text-area">
+      <p><%= form_for @gift, url: gifts_path, method: :post do |f| %></p>
+      <div>
+        <p><%= f.label "Name:", id:"create_gift_label" %></p>
+        <p><%= f.text_field :name %></p>
+      </div>
+      <div>
+        <p><%= f.label "Price in £:", id: "create_gift_label" %></p>
+        <p><%= f.text_field :price %></p>
+      </div>
+      <div>
+        <p><%= f.label "Description:", id: "create_gift_label" %></p>
+        <p><%= f.text_field :description %></p>
+      </div>
+      <p><%= f.submit "Create", id: "create_gift_button" %></p>
+      <% end %>
     </div>
     <div>
-      <p><%= f.label "Price in £:", :class => "create_gift_label" %></p>
-      <p><%= f.text_field :price %></p>
+      <%= link_to "Back to gifts", gifts_path %>
     </div>
-    <div>
-      <p><%= f.label "Description:", :class => "create_gift_label" %></p>
-      <p><%= f.text_field :description %></p>
-    </div>
-    <p><%= f.submit "Create", :class => "create_gift_button" %></p>
-    <% end %>
-  </div>
-  <div>
-    <%= link_to "Back to gifts", gifts_path %>
   </div>
 </div>
