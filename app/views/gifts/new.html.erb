@@ -1,4 +1,4 @@
-<div class="container">
+<div id="giftformbody">
   <div id="create_gift_form">
     <h2>Add a new gift</h2>
     <div id="text-area">
@@ -18,8 +18,8 @@
       <p><%= f.submit "Create", id: "create_gift_button" %></p>
       <% end %>
     </div>
-    <div>
-      <%= link_to "Back to gifts", gifts_path %>
+      <div >
+      <%= button_to "Back to homepage", show_path, method: :get, :class => "home_page_button" %>
     </div>
   </div>
 </div>

@@ -1,31 +1,32 @@
 <!--Gift Show Page Cards - Used Bootstrap -->
 
-
-<div class="card gift_show" style="width: 18rem;">
-  <div class="card-body">
-    <h5 class="card-title">
-    <% if @gift.name %>
-      <p>Gift Name : <%= @gift.name%></p>
-    <% else %>
-      <p>There is no name SUPRISE!</p>
-    <% end %>
-    </h5>
-    <h6 class="card-subtitle mb-2 text-muted">
-    <% if @gift.price %>
-      <p>Price: £<%= @gift.price %></p>
-    <% else %>
-      <p>There is no price.</p>
-    <% end %>
-    </h6>
-    <p class="card-text">
-    <% if !@gift.description.empty? %>
-      <p>Description:</p>
-      <p><%= @gift.description %></p>
-    <% else %>
-      <p>There is no description.</p>
-    <% end %>
-    </p>
-    <a href="#" class="card-link"><%= link_to "Edit Gift", edit_gift_path(@gift) %></a><br>
-    <a href="#" class="card-link"><%= link_to "Go back", gifts_path %></a>
+<div id="giftshow">
+  <div class="card"style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title">
+      <% if @gift.name %>
+        <p>Gift Name : <%= @gift.name%></p>
+      <% else %>
+        <p>There is no name SUPRISE!</p>
+      <% end %>
+      </h5>
+      <h6 class="card-subtitle mb-2 text-muted">
+      <% if @gift.price %>
+        <p>Price: £<%= @gift.price %></p>
+      <% else %>
+        <p>There is no price.</p>
+      <% end %>
+      </h6>
+      <p class="card-text">
+      <% if !@gift.description.empty? %>
+        <p>Description:</p>
+        <p><%= @gift.description %></p>
+      <% else %>
+        <p>There is no description.</p>
+      <% end %>
+      </p>
+      <a href="#" class="card-link"><%= link_to "Edit Gift", edit_gift_path(@gift) %></a><br>
+      <a href="#" class="card-link"><%= link_to "Go back", show_path %></a>
+    </div>
   </div>
 </div>

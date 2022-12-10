@@ -8,12 +8,8 @@
         <%= link_to gift.name.capitalize, gift %>
       </div>
       <ul class="list-group list-group-flush">
+        <li class="list-group-item"><%= gift.description %></li>
         <li class="list-group-item"><%= link_to "Edit Gift", edit_gift_path(gift) %></li>
-        <li class="list-group-item">
-        <%= form_tag gift_path(gift), method: "delete" do  %>
-          <%= submit_tag "Delete Gift" %>
-        <% end %>
-        </li>
       </ul>
     <% end %>
   </div>

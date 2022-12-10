@@ -40,26 +40,25 @@
         <h4>Participants: <%= @group.users.length %></h4>
       </div>
 
-      <div id="event_member_list">
+      <ul class="list-group" id="event_member_list">
         <% if @group.users.length > 0 %>
-          <h4>Participants names:</h4>
           <% @group.users.each do |user| %>
-            <p id="participanting_members"><%= user.name.capitalize %></p>
+            <li class="list-group-item"><p id="participanting_members"><%= user.name.capitalize %></p></li>
           <% end %>
         <% end %>
-      </div>
+      </ul>
 
   <% end %>
   <div id="group_home_buttons">
-    <div id="">
+    <div>
       <%= button_to "Add Participants", add_user_path, method: :get, id: "group_buttons" %>
     </div>
 
-    <div id="">
+    <div>
       <%= button_to "Make draw", draw_path, method: :post, id: "group_buttons" %>
     </div>
 
-    <div id="">
+    <div>
       <%= button_to "Back to homepage", show_path, method: :get, id: "group_buttons" %>
     </div>
   </div>

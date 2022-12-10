@@ -22,3 +22,26 @@
   </div>
 <% end %>
 <%= render "devise/shared/links" %>
+
+
+
+
+<div id="login_form">
+    <h2>Login to Kubi Secret Santa</h2>
+    <%= render "errors/errors" %>
+    <div id="text-area">
+      <p><%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %></p>
+      <div>
+        <p><%= f.label :email, id: "login_label" %></p>
+        <p><%= f.text_field :email %></p>
+      </div>
+      <div>
+        <p><%= f.label :password, id: "login_label" %></p>
+        <p><%= f.text_field :password %></p>
+      </div>
+      <p><%= f.submit "Submit", id: "login_button" %></p>
+      <% end %>
+    </div>
+    <h4>New? <%= link_to "Sign Up Here", new_user_registration_path %> </h4>
+</div>
+  <%= render "devise/shared/links" %>
