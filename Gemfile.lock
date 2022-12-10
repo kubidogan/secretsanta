@@ -95,6 +95,8 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
+      actionmailer (>= 5.0)
+      devise (>= 4.6)
     erubi (1.11.0)
     globalid (1.0.0)
       activesupport (>= 5.0)
