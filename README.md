@@ -11,8 +11,16 @@
 <br>
 
 
-<img width="302" alt="secretsanta" src="http://g.recordit.co/3ix64SVNGN.gif">
+<img width="500" alt="secretsanta" src="http://g.recordit.co/3ix64SVNGN.gif">
 
+# What I would improve:
+
+## - Currently the application is not sending the invite to user after adding them to the group.
+## - Use Devise:Invitable to impliment invitations and allow users to sign in.
+## - Add JS or Stimulus to create modal pop ups for forms.
+## - Intigrate API for gifts website for users to pick from depending on budget.
+## - Style the front-end using React or Tailwind for clear code.
+## - Refactor Logic within the users controller.
 
 
 
@@ -36,8 +44,5 @@ rails db:create db:migrate db:seed
 rails s and land on http://localhost:3000
 ```
 <br>
-
-<h2>Things to improve</h2>
-
 
 # Enjoy!
