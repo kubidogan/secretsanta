@@ -11,7 +11,9 @@
 <br>
 
 
-<img width="500" alt="secretsanta" src="http://g.recordit.co/3ix64SVNGN.gif">
+<img width="500" alt="secretsanta" src="http://g.recordit.co/3ix64SVNGN.gif"> <img width="500" alt="secretsanta" src="http://g.recordit.co/6S7rvQDUAo.gif">
+
+
 
 # What I would improve:
 
@@ -22,7 +24,11 @@
 ## - Style the front-end using React or Tailwind for clear code.
 ## - Refactor Logic within the users controller.
 
+<br>
 
+
+
+<br>
 
 # Getting Started:
 
