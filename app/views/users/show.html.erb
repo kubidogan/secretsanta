@@ -29,11 +29,12 @@
     <div id="user_wishlist">
       <p><%= button_to "Add to your wishlist", new_gift_path, method: :get, id: 'create_wish_button' %></p>
       <% if !current_user.gifts.empty? %>
-        <h3 id="not_empty">Your wishlist</h3>
+        <h3 id="not_empty"><%= "#{current_user.name.capitalize}'s wishlist" %></h3>
           <% current_user.gifts.each do |gift| %>
               <% if gift.price %>
                 <div id="user_wishlist_info">
                   <p><%= link_to gift.name, gift,id: "gift_link" %> <%= " and its only £#{gift.price}!" %> </p>
+                  <p><%= gift.description %></p>
                   <p><%= button_to "Delete Gift", gift_path(gift), method: :delete, id: "remove_gift" %></p>
                 </div>
                 <% else %>

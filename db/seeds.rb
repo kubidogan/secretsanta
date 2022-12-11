@@ -18,6 +18,9 @@ handshq = Group.create(name: "HandsHq", budget: 100)
 wishlist_one = Wishlist.create(user_id: kubi.id)
 
 iphone = Gift.create(name: "iPhone", price: 10, description: "Over priced", wishlist_id: wishlist_one.id)
+chair = Gift.create(name: "Gaming Chair", price: 100, description: "If you really like me :P ", wishlist_id: wishlist_one.id)
+jordans = Gift.create(name: "Jordan retro 4", price: 150, description: "Got to be in it to win it", wishlist_id: wishlist_one.id)
+job = Gift.create(name: "Job at HandsHQ", price: 0, description: "Priceless", wishlist_id: wishlist_one.id)
 
 puts "created group"
 
