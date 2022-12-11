@@ -25,8 +25,8 @@ class UsersController < ApplicationController
 
   def show
     #iterate over all groups
-    @wishlist = current_user.wishlist if current_user.wishlist
-    @groups = current_user.groups if current_user.groups
+    @wishlist = current_user.wishlist
+    @groups = current_user.groups
     if @gifts
       wishlist_gifts = []
       @wishlist.gifts.each do |gift|

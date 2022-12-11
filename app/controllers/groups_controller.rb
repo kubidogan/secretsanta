@@ -38,7 +38,7 @@ class GroupsController < ApplicationController
         flash[:errors] = ["This user is already in the draw"]
         redirect_to add_user_path
       else
-        Invitation.create(user_id: find_user.id, group_id: @group.id, accepted: false)
+        Invitation.create(user_id: find_user.id, group_id: @group.id, accepted: true)
         redirect_to group_path(@group.id)
       end
     else
@@ -55,6 +55,7 @@ class GroupsController < ApplicationController
   end
 
   def show
+    @matched = []
     @group = Group.find(params[:id])
   end
 
@@ -62,9 +63,11 @@ class GroupsController < ApplicationController
     @group = Group.find(params[:id])
     if @group.users.length > 4
       @draws = @group.draw_order
+      @matched = []
+      @matched << @draws
       render :show
     else
-      flash[:errors] = ["You need at least 5 participants. Please add #{5-@group.users.length} more participants."]
+      flash[:errors] = ["You need at least 5 participants. Please add #{5 - @group.users.length} more participants."]
       redirect_to group_path(@group)
     end
   end
