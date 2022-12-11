@@ -12,7 +12,7 @@
 
 
 <img width="450" alt="secretsanta" src="http://g.recordit.co/3ix64SVNGN.gif">
-<img width="450" alt="secretsanta" src="http://g.recordit.co/6S7rvQDUAo.gif">
+<img width="450" alt="secretsanta2" src="http://g.recordit.co/6S7rvQDUAo.gif">
 
 
 
@@ -25,32 +25,6 @@
 ## - Style the front-end using React or Tailwind for clear code.
 ## - Refactor Logic within the users controller.
 
-<slide>
-  <hgroup>
-    <h1>Title</h1>
-  </hgroup>
-  <article class="none">
-    <p>Content</p>
-    <aside class="note">
-      Note
-    </aside>
-  </article>
-</slide>
-
-<slide>
-  <hgroup>
-    <p>Next content</p>
-  </hgroup>
-</slide>
-
-<slide>
-  <hgroup>
-    <h2>String of small content</h2>
-  </hgroup>
-  <article class="smaller">
-    <p>Content</p>
-  </article>
-</slide>
 
 <br>
 
