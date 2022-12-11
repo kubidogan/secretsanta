@@ -1,5 +1,16 @@
 #Group
 
+User.destroy_all
+puts "deleted users"
+Wishlist.destroy_all
+puts "deleted wishlists"
+Group.destroy_all
+puts "deleted groups"
+Gift.destroy_all
+puts "deleted gifts"
+Invitation.destroy_all
+puts "deleted invites"
+
 kubi = User.create(name: "kubi", email: "kubi@gmail.com", password: "hello123", password_confirmation: "hello123")
 
 handshq = Group.create(name: "HandsHq", budget: 100)
