@@ -11,7 +11,8 @@
 <br>
 
 
-<img width="500" alt="secretsanta" src="http://g.recordit.co/3ix64SVNGN.gif"> <img width="500" alt="secretsanta" src="http://g.recordit.co/6S7rvQDUAo.gif">
+<img width="450" alt="secretsanta" src="http://g.recordit.co/3ix64SVNGN.gif">
+<img width="450" alt="secretsanta" src="http://g.recordit.co/6S7rvQDUAo.gif">
 
 
 
